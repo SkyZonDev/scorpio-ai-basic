@@ -1,10 +1,10 @@
-# main.py — WebSocket Edition
 """
 Flux PvE  :  POST /games  →  WS /ws/{id}  →  POST /games/{id}/move
 Flux PvP  :  POST /games  →  POST /games/{id}/join  →  WS /ws/{id}  →  POST /games/{id}/move
 """
 
 import asyncio
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -18,6 +18,7 @@ from api.game_store import (
     STATUS_PLAYING, STATUS_FINISHED,
 )
 
+load_dotenv()
 BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
 ORIGIN   = os.getenv("ORIGIN", "*").split(",")
 
