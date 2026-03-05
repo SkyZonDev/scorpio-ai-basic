@@ -43,7 +43,7 @@ def ask_names(mode):
         return {"X": name1, "O": name2}
     else:
         name1 = input("  Votre nom (vous jouez X) : ").strip() or "Joueur"
-        return {"X": name1, "O": "✦ Scorpio AI"}
+        return {"X": name1, "O": "Scorpio AI"}
 
 def play_game(mode="pve", difficulty=9):
     """

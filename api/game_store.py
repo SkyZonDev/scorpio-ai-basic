@@ -49,7 +49,7 @@ def create_game(mode: str, player_name: str, difficulty: int = 3) -> Game:
 
     if mode == "pve":
         # L'IA n'a pas besoin de token
-        game.players["O"] = {"name": "✦ Scorpio AI", "token": None}
+        game.players["O"] = {"name": "Scorpio AI", "token": None}
 
     _games[game_id] = game
     return game
